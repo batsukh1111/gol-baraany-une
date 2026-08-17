@@ -1,0 +1,191 @@
+{
+  "defaultProductId": "beef-bone",
+  "categories": [
+    {
+      "id": "хүнс",
+      "name": "Хүнс"
+    },
+    {
+      "id": "мах",
+      "name": "Мах"
+    },
+    {
+      "id": "сүү",
+      "name": "Сүү, цагаан идээ"
+    },
+    {
+      "id": "түлш",
+      "name": "Шатахуун"
+    }
+  ],
+  "products": [
+    {
+      "id": "rice",
+      "name": "Цагаан будаа, кг",
+      "short": "Цагаан будаа",
+      "unit": "кг",
+      "category": "хүнс",
+      "pxCode": "8"
+    },
+    {
+      "id": "flour-premium",
+      "name": "Гурил, дээд зэрэг, савласан, 1 кг",
+      "short": "Дээд гурил",
+      "unit": "кг",
+      "category": "хүнс",
+      "pxCode": "2"
+    },
+    {
+      "id": "flour-g1",
+      "name": "Гурил, I зэрэг, савласан, кг",
+      "short": "I зэргийн гурил",
+      "unit": "кг",
+      "category": "хүнс",
+      "pxCode": "3"
+    },
+    {
+      "id": "bread",
+      "name": "Талх, 600 гр",
+      "short": "Талх",
+      "unit": "600 гр",
+      "category": "хүнс",
+      "pxCode": "5"
+    },
+    {
+      "id": "bread-sliced",
+      "name": "Талх, зүссэн, 600 гр",
+      "short": "Зүссэн талх",
+      "unit": "600 гр",
+      "category": "хүнс",
+      "pxCode": "6"
+    },
+    {
+      "id": "bread-rye",
+      "name": "Хар талх, 300 гр",
+      "short": "Хар талх",
+      "unit": "300 гр",
+      "category": "хүнс",
+      "pxCode": "7"
+    },
+    {
+      "id": "beef-bone",
+      "name": "Үхрийн мах, ястай, кг",
+      "short": "Үхрийн мах, ястай",
+      "unit": "кг",
+      "category": "мах",
+      "pxCode": "10"
+    },
+    {
+      "id": "beef-boneless",
+      "name": "Үхрийн мах, цул, кг",
+      "short": "Үхрийн мах, цул",
+      "unit": "кг",
+      "category": "мах",
+      "pxCode": "11"
+    },
+    {
+      "id": "mutton",
+      "name": "Хонины мах, ястай, кг",
+      "short": "Хонины мах",
+      "unit": "кг",
+      "category": "мах",
+      "pxCode": "9"
+    },
+    {
+      "id": "goat",
+      "name": "Ямааны мах, ястай, кг",
+      "short": "Ямааны мах",
+      "unit": "кг",
+      "category": "мах",
+      "pxCode": "13"
+    },
+    {
+      "id": "horse",
+      "name": "Адууны мах, ястай, кг",
+      "short": "Адууны мах",
+      "unit": "кг",
+      "category": "мах",
+      "pxCode": "12"
+    },
+    {
+      "id": "milk-pouch",
+      "name": "Сүү, ууттай, 0.5 л",
+      "short": "Сүү, ууттай",
+      "unit": "0.5 л",
+      "category": "сүү",
+      "pxCode": "15"
+    },
+    {
+      "id": "milk-carton",
+      "name": "Сүү, савтай, л",
+      "short": "Сүү, савтай",
+      "unit": "л",
+      "category": "сүү",
+      "pxCode": "16"
+    },
+    {
+      "id": "yogurt",
+      "name": "Тараг, савласан, 900 гр",
+      "short": "Тараг",
+      "unit": "900 гр",
+      "category": "сүү",
+      "pxCode": "17"
+    },
+    {
+      "id": "egg",
+      "name": "Өндөг, ш",
+      "short": "Өндөг",
+      "unit": "ш",
+      "category": "хүнс",
+      "pxCode": "22"
+    },
+    {
+      "id": "veg-oil",
+      "name": "Ургамлын тос, л",
+      "short": "Ургамлын тос",
+      "unit": "л",
+      "category": "хүнс",
+      "pxCode": "19"
+    },
+    {
+      "id": "butter",
+      "name": "Цөцгийн тос, 200 гр",
+      "short": "Цөцгийн тос",
+      "unit": "200 гр",
+      "category": "хүнс",
+      "pxCode": "18"
+    },
+    {
+      "id": "sugar",
+      "name": "Элсэн чихэр, кг",
+      "short": "Элсэн чихэр",
+      "unit": "кг",
+      "category": "хүнс",
+      "pxCode": "20"
+    },
+    {
+      "id": "tea",
+      "name": "Ногоон цай, савласан, 90 г",
+      "short": "Ногоон цай",
+      "unit": "90 г",
+      "category": "хүнс",
+      "pxCode": "21"
+    },
+    {
+      "id": "gasoline-92",
+      "name": "Аи-92 автобензин, л",
+      "short": "Аи-92 бензин",
+      "unit": "л",
+      "category": "түлш",
+      "pxCode": "30"
+    },
+    {
+      "id": "diesel",
+      "name": "Дизелийн түлш, л",
+      "short": "Дизель",
+      "unit": "л",
+      "category": "түлш",
+      "pxCode": "31"
+    }
+  ]
+}

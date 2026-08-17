@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Өргөн хэрэглээний барааны үнэ | Үндэсний статистикийн хороо</title>
+  <meta name="description" content="Нийслэлийн хүнсний гол нэрийн бараа, шатахууны зах зээлийн үнэ болон үйлдвэрлэгчийн үнийг харьцуулж харах дашбоард.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap brand">
+      <div class="mark" aria-hidden="true">ҮСХ</div>
+      <div class="brand-text">
+        <span class="brand-kicker">1212.mn · Үндэсний статистикийн хороо</span>
+        <span class="brand-name">Өргөн хэрэглээний барааны үнэ</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>Барааны үнийг энгийнээр харьцуулна</h1>
+      <p class="lede">
+        Дэлгүүрт зарагдаж буй зах зээлийн үнэ, үйлдвэрлэгчийн үнийг
+        өмнөх 7 хоног, өмнөх сар, жилийн өмнөх үетэй харьцуулж харна уу.
+        Зөвхөн гол нэрийн барааг харуулна.
+      </p>
+      <div class="meta-row">
+        <span class="pill" id="weeklyMeta">7 хоногийн мэдээ ачаалж байна…</span>
+        <span class="pill" id="monthlyMeta">Сарын мэдээ ачаалж байна…</span>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="pickTitle">
+      <h2 id="pickTitle">1. Бүтээгдэхүүнээ сонгоно уу</h2>
+      <p class="hint">Нэг бараа сонговол график гарна. Олон бараа сонговол хүснэгтээр харьцуулна.</p>
+      <div class="search-row">
+        <input id="productSearch" type="search" placeholder="Жишээ: үхрийн мах, гурил, бензин…" autocomplete="off">
+        <button class="ghost" id="clearBtn" type="button">Цэвэрлэх</button>
+      </div>
+      <div class="filters" id="categoryFilters"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="selected-row" id="selectedRow"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="weeklyTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="weeklyTitle">2. Зах зээлийн үнэ · 7 хоног тутам</h2>
+          <p class="hint">Нийслэлийн дэлгүүр, захын дундаж үнэ. Хуудас нээх бүрт 1212.mn-ээс шууд татна.</p>
+        </div>
+      </div>
+      <div id="weeklyEmpty" class="empty">Дээрээс бүтээгдэхүүн сонгоно уу.</div>
+      <div id="weeklyContent" class="hidden">
+        <div class="kpi-grid" id="weeklyKpis"></div>
+        <div class="table-wrap" style="margin-top:16px">
+          <table>
+            <thead>
+              <tr>
+                <th>Бүтээгдэхүүн</th>
+                <th>Сүүлийн үнэ</th>
+                <th>Өмнөх 7 хоног</th>
+                <th>Өмнөх сар</th>
+                <th>Жилийн өмнөх</th>
+              </tr>
+            </thead>
+            <tbody id="weeklyTable"></tbody>
+          </table>
+        </div>
+        <div id="weeklyChartWrap" class="hidden" style="margin-top:18px">
+          <h3 id="weeklyChartTitle" style="margin:0 0 10px;font-size:16px">Үнийн хөдөлгөөн</h3>
+          <div class="chart-box"><canvas id="weeklyChart"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="monthlyTitle">
+      <div class="section-head">
+        <div>
+          <h2 id="monthlyTitle">3. Сарын үнэ · зах зээл ба үйлдвэрлэгч</h2>
+          <p class="hint">
+            Дээрхтэй ижил барааны сарын дундаж үнэ.
+            Хөх шугам — хэрэглээний (зах зээлийн) үнэ, шар шугам — үйлдвэрлэгчийн үнэ.
+          </p>
+        </div>
+        <div class="legend">
+          <span><i class="swatch cpi"></i>Зах зээлийн үнэ</span>
+          <span><i class="swatch ppi"></i>Үйлдвэрлэгчийн үнэ</span>
+        </div>
+      </div>
+      <div id="monthlyEmpty" class="empty">Дээрээс бүтээгдэхүүн сонгоно уу.</div>
+      <div id="monthlyContent" class="hidden">
+        <div id="monthlyChartWrap" class="hidden">
+          <div class="chart-box"><canvas id="monthlyChart"></canvas></div>
+        </div>
+        <div class="table-wrap" style="margin-top:16px">
+          <table>
+            <thead>
+              <tr>
+                <th>Бүтээгдэхүүн</th>
+                <th>Сар</th>
+                <th>Зах зээлийн үнэ</th>
+                <th>Сараас</th>
+                <th>Жилээс</th>
+                <th>Үйлдвэрлэгчийн үнэ</th>
+                <th>Сараас</th>
+                <th>Жилээс</th>
+              </tr>
+            </thead>
+            <tbody id="monthlyTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="help">
+      <p><strong>Юу гэсэн үг вэ?</strong></p>
+      <p><strong>Өмнөх 7 хоног</strong> — хамгийн сүүлийн ажиглалтаас өмнөх 7 хоногийн үнэтэй харьцуулна.</p>
+      <p><strong>Өмнөх сар</strong> — ойролцоогоор 4–5 долоо хоногийн өмнөх мөн үетэй харьцуулна.</p>
+      <p><strong>Жилийн өмнөх</strong> — өнгөрсөн жилийн ижил үетэй харьцуулна.</p>
+      <p>Улаан тоо үнэ өссөн, ногоон тоо үнэ буурсан гэсэн үг. Нэг бараа сонгоход л график гарна.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p><strong>Үндэсний статистикийн хороо</strong> · 1212.mn дээр байрлуулах статик дашбоард.</p>
+      <p>
+        7 хоногийн үнэ:
+        <a href="https://www.1212.mn/mn/statcate/table-view/Economy,%20environment/Consumer%20Price%20Index/DT_NSO_0600_001V4.px" target="_blank" rel="noopener">
+          Нийслэлийн хүнсний гол нэр болон бензин түлшний 7 хоногийн үнэ
+        </a>
+      </p>
+      <p>Сарын хэрэглээний болон үйлдвэрлэгчийн үнэ: байгууллагын CPI VS PPI.xlsx файлаас.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/chart.umd.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
